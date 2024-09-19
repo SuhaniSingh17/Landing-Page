@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Music : Landing Page</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#"
+            >pl<span><i class="ri-play-fill"></i></span>y</a
+          >
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn">Sign Up</button>
+      </div>
+    </nav>
+    <header class="section__container header__container">
+      <div class="header__image">
+        <img src="headphone.jpg" alt="header" />
+      </div>
+      <div class="header__content">
+        <h2>SPIN THE PLAYLIST AND LET THE PARTY BEGIN!</h2> 
+        <h1>MUSIC TO ECHO YOUR EMOTIONS</h1>
+        <p>
+          Unlock the perfect soundtrack for every moment with our 'music for your mood' section! Whether you're soaring high, lost in thought, or anywhere in between, dive into expertly curated playlists designed to elevate your vibe. Explore tunes that speak to your soul and amplify every emotion!
+        </p>
+        <div class="content2">
+          <p>Play The Music Now</p>
+          <img src="pause.png" id="icon">
+
+        </div>
+        <div class="header__btns">
+          <a href="#">
+            <img src="google-play.jpg" alt="google-play" />
+          </a>
+          <a href="#">
+            <img src="app-store.jpg" alt="app-store" />
+          </a>
+        </div>
+      </div>
+    </header>
+    <audio id="music">
+      <source src="music.mp3" type="audio/mp3">
+    </audio>
+    <script>
+      var music = document.getElementById("music");
+      var icon = document.getElementById("icon");
+      icon.onclick = function(){
+        if(music.paused){
+          music.play();
+          icon.src = "play.png";
+        }
+        else{
+          music.pause();
+          icon.src = "pause.png";
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    <section class="features" id="features">
+      <h1 class="heading">SONGS</h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="music1.jpeg" alt="">
+          <h3>Blinding Lights</h3>
+          <p>– The Weeknd</p>
+          <a href="##" class="btn" onclick="togglePlayPause('song1', this)">play now</a>
+          <audio id="song1" src="blinding_lights.mp3"></audio>
+        </div>
+      
+        <div class="box">
+          <img src="music3.jpg" alt="">
+          <h3>With You</h3>
+          <p>– AP Dhillon</p>
+          <a href="##" class="btn" onclick="togglePlayPause('song2', this)">play now</a>
+          <audio id="song2" src="with_you.mp3"></audio>
+        </div>
+      
+        <div class="box">
+          <img src="music2.jpeg" alt="">
+          <h3>Soni Soni</h3>
+          <p>– Darshan Raval</p>
+          <a href="##" class="btn" onclick="togglePlayPause('song3', this)">play now</a>
+          <audio id="song3" src="soni_soni.mp4"></audio>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
